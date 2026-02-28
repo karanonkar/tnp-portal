@@ -48,7 +48,7 @@ tnp-portal/
 
 Clone the repository
 
-git clone https://github.com/yourusername/tnp-portal.git
+git clone https://github.com/karanonkar/tnp-portal.git
 
 Create virtual environment
 
