@@ -101,12 +101,3 @@ Karan
 B.Tech CSE Student
 Focused on building real-world systems to strengthen backend development skills and prepare for campus placements.
 
-🔥 Now this looks serious.
-
-Next professional move:
-
-Create a file called requirements.txt by running:
-
-pip freeze > requirements.txt
-
-Ye recruiter ko dikhata hai ki tum production mindset se kaam kar rahe ho.
