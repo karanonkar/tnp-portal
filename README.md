@@ -1,103 +1,72 @@
-🚀 Advanced Training & Placement Management Portal
+# 🎓 Training & Placement Portal
 
-A web-based Campus Training & Placement Management System built using Django and MySQL.
+A web-based Training and Placement Portal built using Django.
 
-This project aims to automate and streamline the complete campus recruitment workflow through a centralized multi-role system.
+This project is part of my 45-Day Development Challenge where I am building a real-world placement management system step by step.
 
-🎯 Project Objective
+---
 
-To design and develop a real-world placement portal that manages:
+## 🚀 Project Objective
 
-Multi-role authentication (Student, HOD, TPO, Company)
+To create a centralized platform where:
 
-Company job postings & eligibility filtering
+- Students can apply for jobs easily
+- Companies can post job drives
+- HOD can manage student data
+- TNP can verify and monitor placement activities
 
-Student application workflow
+---
 
-Referral approval process
+## 👥 User Roles
 
-Online assessment module
+- Student
+- Company
+- HOD
+- TNP (Training & Placement Officer)
 
-Placement analytics dashboard
+Each role has a separate dashboard and access control.
 
-This project is being developed under a 45-Day Consistency Challenge focused on backend mastery and placement readiness.
+---
 
-🏗 System Architecture
+## 🔐 Authentication Module (Completed)
 
-User → Frontend → Backend (Django) → MySQL Database
+- Custom User Model
+- Role-based login system
+- Role-based dashboard rendering
+- Logout functionality
+- Protected routes using @login_required
 
-The system follows a role-based access control structure where each user type has a dedicated dashboard and permissions.
+---
 
-🛠 Tech Stack
+## 🛠 Tech Stack
 
-Backend: Django (Python)
-Database: MySQL
-Frontend: HTML, CSS, JavaScript
-Version Control: Git & GitHub
+- Backend: Django
+- Database: SQLite (will upgrade to MySQL)
+- Frontend: HTML, CSS, JavaScript
+- Version Control: Git & GitHub
 
-📂 Project Structure
-tnp-portal/
-│── manage.py
-│── tnp_portal/
-│── accounts/
-│── templates/
-│── static/
-│── .gitignore
-│── README.md
-⚙ Installation & Setup
+---
 
-Clone the repository
+## 📅 45-Day Development Progress
 
-git clone https://github.com/karanonkar/tnp-portal.git
+- Day 1 ✅ Project setup + Custom User Model
+- Day 2 ✅ Login system + Role-based dashboard + Logout
+- Day 3 ⏳ Job posting system (Upcoming)
 
-Create virtual environment
+---
 
-python -m venv venv
+## 📌 Future Features
 
-Activate environment
+- Company job posting
+- Student eligibility filtering
+- Online test module
+- Placement analytics dashboard
+- Notification system
 
-Windows:
+---
 
-venv\Scripts\activate
+## 💡 Author
 
-Install dependencies
-
-pip install -r requirements.txt
-
-Run migrations
-
-python manage.py migrate
-
-Start server
-
-python manage.py runserver
-📅 45-Day Development Challenge Tracker
-
-Day 1 ✅ Project setup + Custom User Model
-
-Day 2 ⏳ Upcoming
-
-Day 3 ⏳ Upcoming
-
-...
-
-Consistency is the priority.
-
-🚀 Future Enhancements
-
-Online test timer logic
-
-Automated result evaluation
-
-Advanced placement analytics
-
-Resume upload & management
-
-Interview scheduling system
-
-👨‍💻 Developer
-
-Karan
-B.Tech CSE Student
-Focused on building real-world systems to strengthen backend development skills and prepare for campus placements.
-
+Karan  
+B.Tech CSE Student  
+Building real-world projects to master backend development.
