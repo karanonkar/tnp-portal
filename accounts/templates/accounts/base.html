@@ -1,0 +1,146 @@
+<!doctype html>
+<html>
+  <head>
+    <title>{% block title %}TNP Portal{% endblock %}</title>
+
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f4f6f9;
+      }
+
+      .navbar {
+        background-color: #0d3b66;
+        color: white;
+        padding: 12px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .navbar h2 {
+        margin: 0;
+      }
+
+      .user-info {
+        font-size: 14px;
+      }
+
+      .logout-btn {
+        background-color: #f4a261;
+        padding: 6px 12px;
+        color: black;
+        text-decoration: none;
+        border-radius: 4px;
+        font-weight: bold;
+        margin-left: 10px;
+      }
+
+      .content {
+        padding: 30px;
+      }
+
+      .card {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      }
+
+      footer {
+        text-align: center;
+        padding: 15px;
+        background: #0d3b66;
+        color: white;
+        margin-top: 40px;
+      }
+      .user-section {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+      }
+
+      /* OUTER CIRCLE */
+      .profile-wrapper {
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #f4a261, #e76f51);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+        padding: 4px;
+      }
+
+      /* INNER CIRCLE */
+      .profile-circle {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        background-color: #ffffff;
+        color: #0d3b66;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        font-size: 18px;
+      }
+
+      /* DASHBOARD GRID */
+      .dashboard-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+      }
+
+      /* STAT CARD */
+      .stat-card {
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        text-align: center;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+
+      .stat-card h2 {
+        margin: 0;
+        font-size: 32px;
+        color: #0d3b66;
+      }
+
+      .stat-card p {
+        margin-top: 8px;
+        font-size: 14px;
+        color: #555;
+      }
+
+      /* HOVER EFFECT */
+      .stat-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <h2>TNP Portal</h2>
+
+      {% if user.is_authenticated %}
+      <div class="user-section">
+        <div class="profile-circle">{{ user.username|first|upper }}</div>
+        <a href="/logout/" class="logout-btn">Logout</a>
+      </div>
+      {% endif %}
+    </div>
+
+    <div class="content">{% block content %}{% endblock %}</div>
+
+    <footer>© 2026 Training & Placement Cell</footer>
+  </body>
+</html>

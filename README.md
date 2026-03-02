@@ -1,72 +1,70 @@
-# 🎓 Training & Placement Portal
+# 🎓 TNP Portal (Training & Placement Portal)
 
-A web-based Training and Placement Portal built using Django.
-
-This project is part of my 45-Day Development Challenge where I am building a real-world placement management system step by step.
+A Role-Based Training & Placement Portal built using Django.
 
 ---
 
-## 🚀 Project Objective
+## 🚀 Features Implemented (Till Day 3)
 
-To create a centralized platform where:
-
-- Students can apply for jobs easily
-- Companies can post job drives
-- HOD can manage student data
-- TNP can verify and monitor placement activities
-
----
-
-## 👥 User Roles
-
-- Student
-- Company
-- HOD
-- TNP (Training & Placement Officer)
-
-Each role has a separate dashboard and access control.
-
----
-
-## 🔐 Authentication Module (Completed)
-
+### 🔐 Authentication System
 - Custom User Model
-- Role-based login system
-- Role-based dashboard rendering
-- Logout functionality
-- Protected routes using @login_required
+- Role-Based Login
+- Dashboard Redirection
+
+### 👥 Roles Supported
+- Student
+- HOD
+- TPO
+- Company
+- Admin
+
+### 🏢 Core Modules
+- Department Management
+- Company Management
+- Job Posting System
+- Application System (Student Apply Feature)
+
+### 📊 Dashboards
+- Student Dashboard (View & Apply Jobs)
+- HOD Dashboard (View Department Stats)
+- Company Dashboard (View Posted Jobs)
+- TPO Dashboard (Overall Stats)
+
+### 🛡 Apply System
+- Students can apply to jobs
+- Duplicate applications prevented
+- Application model implemented
 
 ---
 
 ## 🛠 Tech Stack
 
-- Backend: Django
-- Database: SQLite (will upgrade to MySQL)
-- Frontend: HTML, CSS, JavaScript
-- Version Control: Git & GitHub
+- Python
+- Django 6
+- SQLite (Development)
+- HTML/CSS
 
 ---
 
-## 📅 45-Day Development Progress
+## 📌 Project Status
 
-- Day 1 ✅ Project setup + Custom User Model
-- Day 2 ✅ Login system + Role-based dashboard + Logout
-- Day 3 ⏳ Job posting system (Upcoming)
-
----
-
-## 📌 Future Features
-
-- Company job posting
-- Student eligibility filtering
-- Online test module
-- Placement analytics dashboard
-- Notification system
+Day 3 Completed  
+Apply System Integrated  
+Project Structure Stabilized  
 
 ---
 
-## 💡 Author
+## 📅 Upcoming (Day 4)
+
+- Company View Applicants
+- Apply Status System
+- UI Enhancement
+- Production-Level Improvements
+
+---
+
+## 👨‍💻 Developed By
 
 Karan  
 B.Tech CSE Student  
-Building real-world projects to master backend development.
+Bce mandideep

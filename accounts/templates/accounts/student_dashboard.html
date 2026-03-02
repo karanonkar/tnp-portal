@@ -1,0 +1,21 @@
+{% extends 'accounts/base.html' %} {% block title %}Student Dashboard{% endblock
+%} {% block content %}
+
+<h1>Available Placement Drives</h1>
+
+<div class="dashboard-grid">
+  {% for job in jobs %}
+  <div class="stat-card">
+    <h3>{{ job.title }}</h3>
+    <p><strong>Company:</strong> {{ job.company.name }}</p>
+    <p><strong>Package:</strong> {{ job.package }}</p>
+    <p><strong>Last Date:</strong> {{ job.last_date }}</p>
+
+    <a href="{% url 'apply_job' job.id %}" class="btn btn-success"> Apply </a>
+  </div>
+  {% empty %}
+  <p>No jobs available.</p>
+  {% endfor %}
+</div>
+
+{% endblock %}

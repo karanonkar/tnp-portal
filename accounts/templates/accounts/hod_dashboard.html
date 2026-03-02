@@ -1,0 +1,28 @@
+{% extends 'accounts/base.html' %} {% block title %}HOD Dashboard{% endblock %}
+{% block content %}
+
+<h1 style="margin-bottom: 20px">Welcome {{ user.username }}</h1>
+
+<div class="dashboard-grid">
+  <div class="stat-card">
+    <h2>{{ total_students }}</h2>
+    <p>Total Students (Your Department)</p>
+  </div>
+
+  <div class="stat-card">
+    <h2>{{ total_users }}</h2>
+    <p>Total Users (Portal)</p>
+  </div>
+
+  <div class="stat-card">
+    <h2>0</h2>
+    <p>Active Drives</p>
+  </div>
+</div>
+
+<div class="stat-card">
+    <h2>{{ total_jobs }}</h2>
+    <p>Total Placement Drives</p>
+</div>
+
+{% endblock %}
