@@ -1,5 +1,8 @@
-{% extends 'accounts/base.html' %} {% block title %}Student Dashboard{% endblock
-%} {% block content %}
+{% extends 'accounts/base.html' %}
+
+{% block title %}Student Dashboard{% endblock %}
+
+{% block content %}
 
 <h1>Available Placement Drives</h1>
 
@@ -11,7 +14,12 @@
     <p><strong>Package:</strong> {{ job.package }}</p>
     <p><strong>Last Date:</strong> {{ job.last_date }}</p>
 
-    <a href="{% url 'apply_job' job.id %}" class="btn btn-success"> Apply </a>
+    {% if job.id in applied_job_ids %}
+    <button class="btn btn-secondary" disabled>Applied</button>
+{% else %}
+    <a href="{% url 'apply_job' job.id %}" class="btn btn-success">Apply</a>
+{% endif %}
+
   </div>
   {% empty %}
   <p>No jobs available.</p>

@@ -1,0 +1,33 @@
+{% extends 'accounts/base.html' %} {% block title %}TPO Dashboard{% endblock %}
+{% block content %}
+
+<h1>TPO Dashboard</h1>
+
+<div class="dashboard-grid">
+  <div class="stat-card">
+    <h3>Total Users</h3>
+    <p>{{ total_users }}</p>
+  </div>
+
+  <div class="stat-card">
+    <h3>Total Students</h3>
+    <p>{{ total_students }}</p>
+  </div>
+
+  <div class="stat-card">
+    <h3>Total Companies</h3>
+    <p>{{ total_companies }}</p>
+  </div>
+
+  <div class="stat-card">
+    <h3>Total Jobs</h3>
+    <p>{{ total_jobs }}</p>
+  </div>
+
+  <div class="stat-card">
+    <h3>Total Applications</h3>
+    <p>{{ total_applications }}</p>
+  </div>
+</div>
+
+{% endblock %}

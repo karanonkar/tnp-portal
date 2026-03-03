@@ -54,13 +54,39 @@ Project Structure Stabilized
 
 ---
 
-## 📅 Upcoming (Day 4)
+## ✅ Day 4 Progress – Company & Application System
 
-- Company View Applicants
-- Apply Status System
-- UI Enhancement
-- Production-Level Improvements
+### 🔹 Completed Features
 
+- Company Dashboard Created
+- Job Posting System Implemented
+- Student Apply Feature Working
+- Applied Button Logic Added
+- Application Count Visible to Company
+- Database Reset & Clean Migration Setup
+
+### 🔹 Role Based Dashboard
+
+- Student Dashboard
+- Company Dashboard
+- HOD Dashboard
+- TPO Dashboard (Basic Structure)
+
+### 🔹 Technical Improvements
+
+- ForeignKey Relationships
+- Custom User Model with Role
+- Clean Migration Reset
+- Template Logic Optimization
+
+---
+
+## 🔜 Next Plan (Day 5)
+
+- Fix Company Post Button UI
+- Applicant Listing Page
+- Application Status (Approve / Reject)
+- Dashboard UI Enhancement
 ---
 
 ## 👨‍💻 Developed By

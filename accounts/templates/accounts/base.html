@@ -132,11 +132,22 @@
       <h2>TNP Portal</h2>
 
       {% if user.is_authenticated %}
-      <div class="user-section">
-        <div class="profile-circle">{{ user.username|first|upper }}</div>
-        <a href="/logout/" class="logout-btn">Logout</a>
-      </div>
-      {% endif %}
+<div class="user-section">
+
+    {% if user.role == 'student' %}
+        <a href="{% url 'my_applications' %}" class="nav-link">
+            My Applications
+        </a>
+    {% endif %}
+
+    <div class="profile-circle">
+        {{ user.username|first|upper }}
+    </div>
+
+    <a href="/logout/" class="logout-btn">Logout</a>
+
+</div>
+ {% endif %}
     </div>
 
     <div class="content">{% block content %}{% endblock %}</div>

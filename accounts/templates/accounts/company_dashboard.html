@@ -4,29 +4,23 @@
 
 {% block content %}
 
-<h1>Welcome {{ user.company.name }}</h1>
+<h1>Your Posted Jobs</h1>
 
 <div class="dashboard-grid">
 
-    <div class="stat-card">
-        <h2>{{ total_jobs }}</h2>
-        <p>Total Jobs Posted</p>
-    </div>
+{% for item in jobs_with_count %}
+  <div class="stat-card">
+    <h3>{{ item.job.title }}</h3>
+    <p><strong>Package:</strong> {{ item.job.package }}</p>
+    <p><strong>Total Applications:</strong> {{ item.applications_count }}</p>
+    <a href="{% url 'job_applicants' job.id %}" class="btn btn-primary">
+    View Applicants
+    </a>
+  </div>
+{% empty %}
+  <p>No jobs posted yet.</p>
+{% endfor %}
 
-</div>
-
-<h2 style="margin-top:30px;">Your Jobs</h2>
-
-<div class="dashboard-grid">
-    {% for job in company_jobs %}
-        <div class="stat-card">
-            <h3>{{ job.title }}</h3>
-            <p>Package: {{ job.package }}</p>
-            <p>Last Date: {{ job.last_date }}</p>
-        </div>
-    {% empty %}
-        <p>No jobs posted yet.</p>
-    {% endfor %}
 </div>
 
 {% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'accounts/base.html' %} {% block title %}Company Dashboard{% endblock
+%} {% block content %}
+
+<h1>Your Posted Jobs</h1>
+
+<!-- ✅ IMPORTANT: POST JOB BUTTON -->
+<div style="margin-bottom: 20px">
+  <a href="{% url 'post_job' %}" class="btn btn-success"> + Post New Job </a>
+</div>
+
+<div class="dashboard-grid">
+  {% for item in jobs_with_count %}
+  <div class="stat-card">
+    <h3>{{ item.job.title }}</h3>
+    <p><strong>Package:</strong> {{ item.job.package }}</p>
+    <p><strong>Total Applications:</strong> {{ item.applications_count }}</p>
+
+    <a href="{% url 'job_applicants' item.job.id %}" class="btn btn-primary">
+      View Applicants
+    </a>
+  </div>
+  {% empty %}
+  <p>No jobs posted yet.</p>
+  {% endfor %}
+</div>
+
+{% endblock %}

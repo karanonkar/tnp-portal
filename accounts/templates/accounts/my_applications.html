@@ -1,0 +1,18 @@
+{% extends 'accounts/base.html' %}
+{% block title %}My Applications{% endblock %}
+
+{% block content %}
+
+<h1>My Applied Jobs</h1>
+
+{% for app in applications %}
+<div class="stat-card">
+    <h3>{{ app.job.title }}</h3>
+    <p><strong>Company:</strong> {{ app.job.company.name }}</p>
+    <p><strong>Applied On:</strong> {{ app.applied_at }}</p>
+</div>
+{% empty %}
+<p>You haven't applied to any job yet.</p>
+{% endfor %}
+
+{% endblock %}
