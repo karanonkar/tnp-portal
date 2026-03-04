@@ -18,6 +18,15 @@
     <a href="{% url 'job_applicants' item.job.id %}" class="btn btn-primary">
       View Applicants
     </a>
+    <td>
+     <a href="{% url 'shortlist_student' application.id %}" class="btn btn-success">
+        Shortlist
+     </a>
+
+      <a href="{% url 'reject_student' application.id %}" class="btn btn-danger">
+        Reject
+      </a>
+    </td>
   </div>
   {% empty %}
   <p>No jobs posted yet.</p>

@@ -1,0 +1,79 @@
+{% extends 'accounts/base.html' %}
+
+{% block title %}Post Job{% endblock %}
+
+{% block content %}
+
+<h1>Post New Job</h1>
+
+<form method="POST">
+{% csrf_token %}
+
+<div class="form-group">
+<label>Job Title</label>
+<input type="text" name="title" class="form-control" required>
+</div>
+
+<div class="form-group">
+<label>Description</label>
+<textarea name="description" class="form-control" required></textarea>
+</div>
+
+<div class="form-group">
+<label>Package (LPA)</label>
+<input type="number" name="package" class="form-control" required>
+</div>
+
+<div class="form-group">
+<label>Last Date</label>
+<input type="date" name="last_date" class="form-control" required>
+</div>
+
+<h3>Eligibility</h3>
+
+<div class="form-group">
+<label>Minimum 10th %</label>
+<input type="number" name="min_10th_percentage" class="form-control">
+</div>
+
+<div class="form-group">
+<label>Minimum 12th %</label>
+<input type="number" name="min_12th_percentage" class="form-control">
+</div>
+
+<div class="form-group">
+<label>Minimum Diploma %</label>
+<input type="number" name="min_diploma_percentage" class="form-control">
+</div>
+
+<div class="form-group">
+<label>Minimum Bachelor %</label>
+<input type="number" name="min_bachelor_percentage" class="form-control">
+</div>
+
+<div class="form-group">
+<label>Minimum Master %</label>
+<input type="number" name="min_master_percentage" class="form-control">
+</div>
+
+<h3>Backlogs</h3>
+
+<div class="form-group">
+<label>Max Current Backlogs</label>
+<input type="number" name="max_current_backlogs" class="form-control">
+</div>
+
+<div class="form-group">
+<label>Max History Backlogs</label>
+<input type="number" name="max_history_backlogs" class="form-control">
+</div>
+
+<br>
+
+<button type="submit" class="btn btn-primary">
+Post Job
+</button>
+
+</form>
+
+{% endblock %}

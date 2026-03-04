@@ -86,16 +86,14 @@ def dashboard(request):
 
         applications = Application.objects.filter(student=user)
 
-        applied_job_ids = applications.values_list('job_id', flat=True)
+        applied_job_ids = list(applications.values_list('job_id', flat=True))
 
         context = {
-        '   jobs': jobs,
-            'applied_job_ids': list(applied_job_ids)
+        'jobs': jobs,
+        'applied_job_ids': applied_job_ids
         }
 
         return render(request, 'accounts/student_dashboard.html', context)
-
-    # ================= TPO =================
     elif user.role == 'tpo':
 
         total_users = User.objects.count()
@@ -105,15 +103,14 @@ def dashboard(request):
         total_applications = Application.objects.count()
 
         context = {
-            'total_users': total_users,
-            'total_students': total_students,
-            'total_companies': total_companies,
-            'total_jobs': total_jobs,
-            'total_applications': total_applications,
-        }
+        'total_users': total_users,
+        'total_students': total_students,
+        'total_companies': total_companies,
+        'total_jobs': total_jobs,
+        'total_applications': total_applications,
+    }
 
         return render(request, 'accounts/tpo_dashboard.html', context)
-
     # ================= SUPERUSER =================
     elif user.is_superuser:
         return redirect('/admin/')
@@ -237,3 +234,30 @@ def update_application_status(request, app_id, status):
         application.save()
 
     return redirect('job_applicants', job_id=application.job.id)
+
+@login_required
+def shortlist_student(request, application_id):
+
+    if request.user.role != 'company':
+        return redirect('dashboard')
+
+    application = Application.objects.get(id=application_id)
+
+    application.status = 'shortlisted'
+    application.save()
+
+    return redirect('job_applicants', job_id=application.job.id)
+
+@login_required
+def reject_student(request, application_id):
+
+    if request.user.role != 'company':
+        return redirect('dashboard')
+
+    application = Application.objects.get(id=application_id)
+
+    application.status = 'rejected'
+    application.save()
+
+    return redirect('job_applicants', job_id=application.job.id)
+

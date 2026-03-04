@@ -6,19 +6,31 @@
 
 <h1>Your Posted Jobs</h1>
 
+<a href="{% url 'post_job' %}" class="btn btn-success mb-3">
++ Post New Job
+</a>
+
 <div class="dashboard-grid">
 
 {% for item in jobs_with_count %}
   <div class="stat-card">
+
     <h3>{{ item.job.title }}</h3>
-    <p><strong>Package:</strong> {{ item.job.package }}</p>
+
+    <p><strong>Package:</strong> {{ item.job.package }} LPA</p>
+
     <p><strong>Total Applications:</strong> {{ item.applications_count }}</p>
-    <a href="{% url 'job_applicants' job.id %}" class="btn btn-primary">
-    View Applicants
+
+    <a href="{% url 'job_applicants' item.job.id %}" class="btn btn-primary">
+      View Applicants
     </a>
+
   </div>
+
 {% empty %}
+
   <p>No jobs posted yet.</p>
+
 {% endfor %}
 
 </div>
