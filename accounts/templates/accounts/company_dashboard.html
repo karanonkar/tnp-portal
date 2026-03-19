@@ -25,6 +25,14 @@
       View Applicants
     </a>
 
+    <a href="{% url 'edit_job' item.job.id %}" class="btn btn-warning">
+    Edit
+    </a>
+
+    <a href="{% url 'delete_job' item.job.id %}" class="btn btn-danger">
+    Delete
+    </a>
+
   </div>
 
 {% empty %}

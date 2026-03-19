@@ -1,18 +1,53 @@
 {% extends 'accounts/base.html' %}
+
 {% block title %}My Applications{% endblock %}
 
 {% block content %}
 
-<h1>My Applied Jobs</h1>
+<h1>My Applications</h1>
+
+<table class="table table-bordered">
+
+<tr>
+<th>Job</th>
+<th>Company</th>
+<th>Package</th>
+<th>Status</th>
+</tr>
 
 {% for app in applications %}
-<div class="stat-card">
-    <h3>{{ app.job.title }}</h3>
-    <p><strong>Company:</strong> {{ app.job.company.name }}</p>
-    <p><strong>Applied On:</strong> {{ app.applied_at }}</p>
-</div>
+
+<tr>
+
+<td>{{ app.job.title }}</td>
+<td>{{ app.job.company.name }}</td>
+<td>{{ app.job.package }}</td>
+
+<td>
+
+{% if app.status == "pending" %}
+<span class="badge bg-warning">Pending</span>
+
+{% elif app.status == "shortlisted" %}
+<span class="badge bg-success">Shortlisted</span>
+
+{% elif app.status == "rejected" %}
+<span class="badge bg-danger">Rejected</span>
+
+{% endif %}
+
+</td>
+
+</tr>
+
 {% empty %}
-<p>You haven't applied to any job yet.</p>
+
+<tr>
+<td colspan="4">No applications yet.</td>
+</tr>
+
 {% endfor %}
+
+</table>
 
 {% endblock %}

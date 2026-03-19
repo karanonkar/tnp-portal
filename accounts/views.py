@@ -261,3 +261,41 @@ def reject_student(request, application_id):
 
     return redirect('job_applicants', job_id=application.job.id)
 
+@login_required
+def delete_job(request, job_id):
+
+    if request.user.role != 'company':
+        return redirect('dashboard')
+
+    job = Job.objects.get(id=job_id)
+
+    if job.company != request.user:
+        return redirect('dashboard')
+
+    job.delete()
+
+    return redirect('dashboard')
+
+@login_required
+def edit_job(request, job_id):
+
+    if request.user.role != 'company':
+        return redirect('dashboard')
+
+    job = Job.objects.get(id=job_id)
+
+    if job.company != request.user:
+        return redirect('dashboard')
+
+    if request.method == 'POST':
+
+        job.title = request.POST.get('title')
+        job.description = request.POST.get('description')
+        job.package = request.POST.get('package')
+        job.last_date = request.POST.get('last_date')
+
+        job.save()
+
+        return redirect('dashboard')
+
+    return render(request, 'accounts/edit_job.html', {'job': job})

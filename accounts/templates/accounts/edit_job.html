@@ -1,0 +1,22 @@
+{% extends 'accounts/base.html' %}
+
+{% block content %}
+
+<h2>Edit Job</h2>
+
+<form method="POST">
+{% csrf_token %}
+
+<input type="text" name="title" value="{{ job.title }}" placeholder="Job Title"><br><br>
+
+<textarea name="description">{{ job.description }}</textarea><br><br>
+
+<input type="text" name="package" value="{{ job.package }}"><br><br>
+
+<input type="date" name="last_date" value="{{ job.last_date }}"><br><br>
+
+<button type="submit" class="btn btn-success">Update Job</button>
+
+</form>
+
+{% endblock %}

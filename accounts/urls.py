@@ -14,6 +14,7 @@ urlpatterns = [
     path('application/<int:app_id>/<str:status>/',views.update_application_status,name='update_application_status'),
     path('shortlist/<int:application_id>/', views.shortlist_student, name='shortlist_student'),
     path('reject/<int:application_id>/', views.reject_student, name='reject_student'),
-    
+    path('delete-job/<int:job_id>/', views.delete_job, name='delete_job'),
+    path('edit-job/<int:job_id>/', views.edit_job, name='edit_job'),
     
 ]
